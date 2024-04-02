@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEdificiosP.Views.PaginaPrincipal"
+             xmlns:vm="clr-namespace:AppEdificiosP.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:PaginaPrincipalViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content >
+        <Grid  VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="overlay.png" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,50">
+                <ImageButton Source="menu.png" WidthRequest="23" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label Text="GrupoPetromar" FontSize="16" VerticalOptions="Center" TextColor="#1C375C"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Margin="0,20" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="$" TextColor="#1C375C" FontSize="34" VerticalOptions="Center"/>
+                    <Label Text="500.00" TextColor="#1C375C" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Cliente:" TextColor="#1C375C" FontSize="12" VerticalOptions="Center"/>
+                    <Label Text="{Binding Nombre}" TextColor="#1C375C" FontSize="14" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Domicilio:" TextColor="#1C375C" FontSize="12" VerticalOptions="Center"/>
+                    <Label Text="{Binding CalleNumero}" TextColor="#1C375C" FontSize="14" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Label Text="Fecha Corte: Marzo 05, 09:03 AM" TextColor="#1C375C" FontSize="12" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <Frame Grid.Row="1" BorderColor="#1C375C" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Button Text="Pagar"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#1C375C"
+                            CornerRadius="5"
+                        />
+                       
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Button Text="Descargar"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#28a745"
+                            CornerRadius="5"
+                        />
+                    </StackLayout>
+
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" Margin="0,0,0,-40" BorderColor="#1C375C" BackgroundColor="#1C375C" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <ListView x:Name="RecibosList" ItemsSource="{Binding Recibos}" SeparatorVisibility="None"
+              Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Date}" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                                        <Image Grid.Column="1" Source="{Binding Icon}" WidthRequest="38" HeightRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                            <Label Text="{Binding Total}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                                            <Label Text="°C" TextColor="Black" FontSize="15" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

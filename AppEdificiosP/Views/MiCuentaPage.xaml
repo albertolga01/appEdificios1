@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEdificiosP.Views.MiCuentaPage"
+                  
+             xmlns:fontawesome="clr-namespace:AppEdificiosP.Utility" 
+               xmlns:template="clr-namespace:AppEdificiosP.Views"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:AppEdificiosP.ViewModels"  
+             xmlns:model="clr-namespace:AppEdificiosP.Models"  
+             x:Name="BrowseItemsPage"
+           
+             BackgroundColor="#F0F3FB">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" >
+
+        <Frame CornerRadius="10" Grid.Row="1" BackgroundColor="White" Margin="10,10,10,0">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                <Label Grid.Row="0" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.User}" FontSize="20"  ></Label>
+                <Label Grid.Row="0" Grid.Column="1"  Text="{Binding Nombre}" TextColor="#202020"></Label>
+                <Label Grid.Row="1" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Home}" FontSize="20"  ></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CalleNumero}" TextColor="#202020"></Label>
+                <Label Grid.Row="2" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Phone}" FontSize="20"  ></Label>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Telefono}" TextColor="#202020"></Label>
+
+                <Label Grid.Row="3" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Rfc}" TextColor="#202020"></Label>
+
+                <Label Grid.Row="4" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Cfdi}" TextColor="#202020"></Label>
+
+                <Label Grid.Row="5" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding RegimenFiscal}" TextColor="#202020"></Label>
+            </Grid>
+        </Frame>
+
+
+        <Frame Grid.Row="3" Margin="10" CornerRadius="20" >
+            <CarouselView x:Name="cvBanner" Margin="-20" HeightRequest="120" Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout  Orientation="Horizontal"></LinearItemsLayout>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout  HorizontalOptions="FillAndExpand">
+                            <Image Source="{Binding URL}" VerticalOptions="FillAndExpand" HeightRequest="110" HorizontalOptions="FillAndExpand" Aspect="Fill"></Image>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Frame>
+
+    </Grid>
+
+
+
+</ContentPage>
