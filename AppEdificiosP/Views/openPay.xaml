@@ -1,22 +1,243 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppEdificiosP.Views"
+              xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"
              x:Class="AppEdificiosP.Views.openPay">
     <ContentPage.Content>
-        
-        
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-           
-            <Button Grid.Row="4"
-                        Text="Autenticar"
-                        TextColor="White"
-                        BackgroundColor="#1C375C"
-                        CornerRadius="20"
-                        x:Name="btnLogin"
-                        Command="{Binding DatosSesioncommand}"/>
-        </StackLayout>
+        <ScrollView>
+            <Grid VerticalOptions="FillAndExpand" ColumnSpacing="20" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Frame Margin="10,10,50,0"
+                            Padding="20"
+                            Visual="Material"
+                            BackgroundColor="#75849D">
+                        <Grid ColumnSpacing="30"
+                              RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="ic_chip"
+                                     HeightRequest="40"
+                                     Grid.Row="0"
+                                     Grid.Column="1"
+                                     HorizontalOptions="EndAndExpand"/>
+
+                            <Label Text="Card Number"
+                                LineBreakMode="TailTruncation"
+                                FontSize="12"
+                                TextColor="{StaticResource Accent}"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"/>
+                            <Label Text="XXXX-XXXX-XXXX-XXXX"
+                                  FontSize="20"
+                                  TextColor="{StaticResource Secondary}"
+                                  Grid.Row="2"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2"/>
+                            <Label Text="Expiration"
+                               Margin="0,20,0,0"
+                               FontSize="12"
+                               TextColor="{StaticResource Accent}"
+                               Grid.Row="3"
+                               Grid.Column="0"/>
+                            <Label Text="11/11"
+                                FontSize="20"
+                                TextColor="{StaticResource Secondary}"
+                                Grid.Row="4"
+                                Grid.Column="0"/>
+
+                            <Label Text="Cvv"
+                                Margin="0,20,0,0"
+                                FontSize="12"
+                                TextColor="{StaticResource Accent}"
+                                Grid.Row="3"
+                                Grid.Column="1"/>
+
+                            <Label Text="XXX"
+                                FontSize="20"
+                                TextColor="{StaticResource Secondary}"
+                                Grid.Row="4"
+                                Grid.Column="1"/>
+                        </Grid>
+                        
+                    </Frame>
+                </StackLayout>
+
+                <Frame HasShadow="false"
+                    Padding="10"                    
+                    Margin="30,10,50,0"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                    <StackLayout Orientation="Vertical"
+                        Spacing="20">
+                        <Label Text="Tarjetas de crédito" FontSize="16" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="#1C375C"/>
+                        <Image Source="cards1"
+                            HeightRequest="30"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                    Padding="10"                    
+                    Margin="30,0,50,10"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                    <StackLayout Orientation="Vertical"
+                        Spacing="20">
+                        <Label Text="Tarjetas de débito" FontSize="16" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="#1C375C"/>
+                        <Image Source="cards2"
+                            HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                  Padding="10"
+                  BorderColor="{StaticResource LightColor}"
+                  Margin="30,0,50,0"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3">
+                    <StackLayout Orientation="Horizontal"
+                        Spacing="20">
+                        <Entry HorizontalOptions="FillAndExpand"
+                            Keyboard="Text"
+                            Text="{Binding CardName}"
+                             Placeholder="Nombre del Titular"
+                             PlaceholderColor="#B5BBC2"
+                            Visual="Custom"
+                            TextColor="Black">
+                  
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                    Padding="10"
+                    BorderColor="{StaticResource LightColor}"
+                    Margin="30,10,50,10"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3">
+                        <StackLayout Orientation="Horizontal"
+                                Spacing="20">
+                            <Image Source="nocards"
+                                   HeightRequest="30"/>
+
+                            <Entry HorizontalOptions="FillAndExpand"
+                                Keyboard="Numeric"
+                                Text="{Binding CardNumber, Mode=TwoWay}"
+                                Visual="Custom"
+                                 TextColor="Black"
+                                   Placeholder="Número de Tarjeta"
+                                   PlaceholderColor="#B5BBC2">
+                                <Entry.Behaviors>
+                                    <fastEntry:XamarinFastEntryBehaviour Mask="####-####-####-####" 
+                                                                         MaxLength="19"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                     Padding="10"
+                     BorderColor="{StaticResource LightColor}"
+                     Margin="30,0,0,0"
+                     Grid.Row="5"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="ic_date"
+                            HeightRequest="25"/>
+                            <Entry HorizontalOptions="FillAndExpand"
+                            Keyboard="Numeric"
+                            Text="{Binding CardExpirationDate}"
+                            TextColor="Black"
+                            Placeholder="Fecha Expiración"
+                            PlaceholderColor="#B5BBC2"
+                            Visual="Custom">
+                                <Entry.Behaviors>
+                                    <fastEntry:XamarinFastEntryBehaviour Mask="##/##" 
+                                                                MaxLength="5"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                    Padding="10"
+                    BorderColor="{StaticResource LightColor}"
+                    Margin="0,0,50,0"
+                    Grid.Row="5"
+                    Grid.Column="2">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="ic_cvv"
+                         HeightRequest="25"/>
+                        <Entry HorizontalOptions="FillAndExpand"
+                         Keyboard="Numeric"
+                         Text="{Binding CardCvv}"
+                        TextColor="Black"
+                        Placeholder="CVV"
+                        PlaceholderColor="#B5BBC2"
+                         Visual="Custom">
+                            <Entry.Behaviors>
+                                <fastEntry:XamarinFastEntryBehaviour Mask="###" 
+                                                              MaxLength="3"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+
+
+                <BoxView HorizontalOptions="FillAndExpand"
+                   Color="{StaticResource Secondary}"
+                   Visual="Default"
+                   HeightRequest="1"
+                   Margin="0,30"
+                   Grid.Row="6"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"/>
+
+
+                <Button Text="Pagar"
+                         BackgroundColor="#1C375C"
+                         CornerRadius="26"
+                         FontSize="18"
+                         Grid.Row="7"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         Padding="18"
+                         TextColor="White"
+                         Margin="30,0,50,30"
+                         Command="{Binding Pagarcommand}"/>
+
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -29,6 +29,11 @@
             </Style>
 
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid" Android="FontAwesome5FreeSolid900.otf#Regular" iOS="FontAwesome5Free-Solid" />
+         
+            <Color x:Key="PrimaryDark">#75849D</Color>
+            <Color x:Key="Secondary">#B5BBC2</Color>
+            <Color x:Key="Accent">LightGray</Color>
+            <Color x:Key="LightColor">LightGray</Color>
         </ResourceDictionary>     
 
         
