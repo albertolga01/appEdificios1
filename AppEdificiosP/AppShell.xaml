@@ -72,6 +72,7 @@
             </Style>
         </ResourceDictionary>
     </Shell.Resources>
+    
 
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
@@ -84,7 +85,9 @@
     <FlyoutItem Title="Mi Cuenta" Icon="icon_feed.png">
         <ShellContent Route="MiCuentaPage" ContentTemplate="{DataTemplate local:MiCuentaPage}" />
     </FlyoutItem>
-
+    <FlyoutItem Title="Pagar" Icon="icon_feed.png">
+        <ShellContent Route="openPay" ContentTemplate="{DataTemplate local:openPay}" />
+    </FlyoutItem>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Cerrar Sesion" IconImageSource="logout.png" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>

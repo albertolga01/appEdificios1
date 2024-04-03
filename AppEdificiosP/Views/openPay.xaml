@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEdificiosP.Views.openPay">
+    <ContentPage.Content>
+        
+        
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+           
+            <Button Grid.Row="4"
+                        Text="Autenticar"
+                        TextColor="White"
+                        BackgroundColor="#1C375C"
+                        CornerRadius="20"
+                        x:Name="btnLogin"
+                        Command="{Binding DatosSesioncommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
