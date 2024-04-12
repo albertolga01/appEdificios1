@@ -178,4 +178,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_chip.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\recibo.png" />
+  </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ namespace AppEdificiosP.Models
 {
    public class MPrincipal
     {
-
+        public string id { get; set; }
         public string nombre { get; set; }
         public string telefono { get; set; }
         public string rfc { get; set; }

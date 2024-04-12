@@ -76,7 +76,7 @@ namespace AppEdificiosP.ViewModels
                     requestC.Method = "card";
                     requestC.Amount = new Decimal(10.00); //Cantidad
                     requestC.Description = "Cargo inicial a mi merchant"; // cambiar descripcion
-                    requestC.OrderId = "oid-00056"; //unico  
+                    requestC.OrderId = "oid-00057"; //unico  
                     requestC.SendEmail = false;
                     requestC.RedirectUrl = "http://www.openpay.mx/index.html";
                     requestC.Customer = customer;

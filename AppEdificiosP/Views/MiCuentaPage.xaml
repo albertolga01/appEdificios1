@@ -30,8 +30,52 @@
 
                 <Label Grid.Row="5" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
                 <Label Grid.Row="5" Grid.Column="1" Text="{Binding RegimenFiscal}" TextColor="#202020"></Label>
+
             </Grid>
         </Frame>
+
+        <Frame CornerRadius="10" Grid.Row="2" BackgroundColor="#08457E" Margin="10,10,10,0">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10" Padding="10,10,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"  Text="Cambio de Contraseña" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Grid.Row="1"  Text="Nueva Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
+                <Entry Grid.Row="2" 
+                       IsPassword="True"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       Text="{Binding NuevaContraseña}">
+                    
+                </Entry>
+
+                <Label Grid.Row="3"  Text="Repetir Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
+                <Entry Grid.Row="4"  
+                       IsPassword="True" 
+                       HorizontalOptions="FillAndExpand" 
+                       VerticalOptions="FillAndExpand"
+                       Text="{Binding RNuevaContraseña}">
+                    
+                </Entry>
+
+                <Button Text="Cambiar Contraseña"
+                  VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="Center"
+                  BackgroundColor="White"
+                  TextColor="#08457E"
+                  Grid.Row="5" 
+                  Command="{Binding CambioContracommand}"
+               />
+            </Grid>
+        </Frame>
+
 
 
         <Frame Grid.Row="3" Margin="10" CornerRadius="20" >

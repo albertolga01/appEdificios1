@@ -31,7 +31,7 @@
             <StackLayout Orientation="Vertical" Margin="0,20" HorizontalOptions="Center" VerticalOptions="Center">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="$" TextColor="#1C375C" FontSize="34" VerticalOptions="Center"/>
-                    <Label Text="500.00" TextColor="#1C375C" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="{Binding Saldo}" TextColor="#1C375C" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
 
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -43,7 +43,10 @@
                     <Label Text="Domicilio:" TextColor="#1C375C" FontSize="12" VerticalOptions="Center"/>
                     <Label Text="{Binding CalleNumero}" TextColor="#1C375C" FontSize="14" HorizontalOptions="Center"/>
                 </StackLayout>
-                <Label Text="Fecha Corte: Marzo 05, 09:03 AM" TextColor="#1C375C" FontSize="12" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Fecha Corte:" TextColor="#1C375C" FontSize="12" HorizontalOptions="Center"/>
+                    <Label Text="{Binding FechaCorte}" TextColor="#1C375C" FontSize="12" HorizontalOptions="Center"/>
+                </StackLayout>
             </StackLayout>
 
             <Frame Grid.Row="1" BorderColor="#1C375C" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
@@ -58,6 +61,7 @@
                             HorizontalOptions="Center"
                             BackgroundColor="#1C375C"
                             CornerRadius="5"
+                            Command="{Binding PaginaPagarcommand}"
                         />
                        
                     </StackLayout>
@@ -67,6 +71,7 @@
                             HorizontalOptions="Center"
                             BackgroundColor="#28a745"
                             CornerRadius="5"
+                            Command="{Binding PDFRecibocommand}"
                         />
                     </StackLayout>
 
@@ -90,8 +95,9 @@
                                         <Label Text="{Binding Date}" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                                         <Image Grid.Column="1" Source="{Binding Icon}" WidthRequest="38" HeightRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
                                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                                            <Label Text="{Binding Total}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
-                                            <Label Text="°C" TextColor="Black" FontSize="15" VerticalOptions="Center"/>
+                                            <Label Text="$" TextColor="Black" FontSize="15" VerticalOptions="Center"/>
+                                            <Label Text="{Binding total}" TextColor="Black" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                                           
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -14,13 +15,18 @@ namespace AppEdificiosP.ViewModels
 {
     public class MiCuentaViewModel : BaseViewModel
     {
-
+        string _Identificador;
         string _Nombre;
         string _CalleNumero;
         string _Telefono;
         string _Rfc;
         string _Cfdi;
         string _RegimenFiscal;
+        public string Identificador
+        {
+            get { return _Identificador; }
+            set { SetValue(ref _Identificador, value); }
+        }
         public string Nombre
         {
             get { return _Nombre; }
@@ -51,12 +57,13 @@ namespace AppEdificiosP.ViewModels
             get { return _RegimenFiscal; }
             set { SetValue(ref _RegimenFiscal, value); }
         }
+        public string NuevaContraseña { get; set; }
+        public string RNuevaContraseña { get; set; }
+
         private static readonly HttpClient client = new HttpClient();
         public MiCuentaViewModel()
         {
-            Title = "Mi Cuenta";
-          
-
+            Title = "Mi Cuenta";                      
         }
 
         public async Task datosCliente()
@@ -72,6 +79,7 @@ namespace AppEdificiosP.ViewModels
             var responseString = await response.Content.ReadAsStringAsync();
 
             var res = JsonConvert.DeserializeObject<MPrincipal>(responseString);
+            Identificador = res.id;
             Nombre = res.nombre;
             Telefono = res.telefono;
             Rfc = "RFC: " + res.rfc;
@@ -80,7 +88,45 @@ namespace AppEdificiosP.ViewModels
             CalleNumero = res.calleNumero + " " +res.colonia;
         }
 
+        public async Task CambioContra()
+        {
+            if (string.IsNullOrEmpty(NuevaContraseña) || string.IsNullOrEmpty(RNuevaContraseña))
+            {
+                await DisplayAlert("Campos Vacios", "FAVOR DE LLENAR LOS CAMPOS", "OK");
+            }
+            else
+            {
+                if(NuevaContraseña == RNuevaContraseña)
+                {
+                    var values = new Dictionary<string, string>
+                    {
+                        { "identificador", Identificador},
+                        { "contrasena", NuevaContraseña },
+                        { "id","cambiarContra" }
+                    };
+                    var content = new FormUrlEncodedContent(values);
+                    var response = await client.PostAsync("https://app.petromargas.com/api/indexapp.php", content);
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    Console.Write(responseString);
+                    await DisplayAlert("Contraseña", responseString, "OK");
+                    if(responseString == "Error.") { } 
+                    else
+                    {
+                        Preferences.Clear();
+
+                        await Shell.Current.GoToAsync("//LoginPage");
+            
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Contraseña", "Las contraseñas no coinciden", "OK");
+                }
+            }
 
 
+        }
+
+        public ICommand CambioContracommand => new Command(async () => await CambioContra());
     }
 }
