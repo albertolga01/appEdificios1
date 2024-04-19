@@ -11,15 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace AppEdificiosP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class openPay : ContentPage
+    public partial class MetodoPago : ContentPage
     {
-        openPayViewModel _viewModel;
-
-        public openPay()
+        PaginaPrincipalViewModel _viewModel;
+        public MetodoPago()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new openPayViewModel();
-          
+            BindingContext = _viewModel = new PaginaPrincipalViewModel();
         }
     }
 }

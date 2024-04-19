@@ -15,7 +15,7 @@ namespace AppEdificiosP
             InitializeComponent();
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(PaginaPrincipal), typeof(PaginaPrincipal));
-           
+            Routing.RegisterRoute(nameof(MetodoPago), typeof(MetodoPago));
             //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             GoToAsync("//LoginPage");
         }

@@ -12,6 +12,9 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
+using Rg.Plugins.Popup.Services;
+using AppEdificiosP.Views;
+
 namespace AppEdificiosP.ViewModels
 {
     public class PaginaPrincipalViewModel : BaseViewModel
@@ -157,21 +160,27 @@ namespace AppEdificiosP.ViewModels
                 listView.SelectedItem = null;
         }
 
-        public async Task PaginaPagar(double saldo)
+        public async void PaginaPagar(double Saldo)
         {
-            string ruta = $"//openPay?parametro={saldo}";
+           // await Shell.Current.GoToAsync("//MetodoPago");
+
+            string ruta = $"//openPay?parametro={Saldo}";            
             await Shell.Current.GoToAsync(ruta);
+
+
+            //string ruta = $"//openPay?parametro={saldo}";
+            //await Shell.Current.GoToAsync(ruta);
+
 
 
         }
         public async Task PDFRecibo()
         {
-            // URL del PDF que quieres descargar
-            string urlPDF = "https://app.petromargas.com/Recibo/" + IDlectura;
 
+            // URL del PDF que quieres descargar
+            string urlPDF = "https://app.petromargas.com/Recibo/" + IDlectura;            
             HttpClient httpClient = new HttpClient();
             var stream = await httpClient.GetStreamAsync(urlPDF);
-
             // Guardar el PDF localmente
             string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "archivo.pdf");
             using (var fileStream = File.Create(filePath))
@@ -187,10 +196,13 @@ namespace AppEdificiosP.ViewModels
                 {
                     File = new ReadOnlyFile(filePath)
                 });
+                // Oculta la ventana emergente de carga cuando la tarea haya terminado
+ 
             }
             else
             {
                 await DisplayAlert("Error", "El archivo PDF no se pudo descargar", "OK");
+               
             }
         }
 
@@ -198,8 +210,9 @@ namespace AppEdificiosP.ViewModels
 
 
         public ICommand DatosSesioncommand => new Command(async () => await datosSesion());
-        //public ICommand PaginaPagarcommand => new Command(async () => await PaginaPagar());
-        public ICommand PaginaPagarcommand => new Command<double>(async (parametro) => await PaginaPagar(parametro));
+        public ICommand PaginaPagarcommand => new Command(async () => PaginaPagar(Saldo));
+        //public ICommand PaginaPagarcommand => new Command<double>(async (Saldo) => await PaginaPagar(Saldo));
+
         public ICommand PDFRecibocommand => new Command(async () => await PDFRecibo());
 
         public class Recibo

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -23,11 +24,17 @@ namespace AppEdificiosP.ViewModels
         public string CardNumber { get; set; }
         public string CardExpirationDate { get; set; }
         public string CardCvv { get; set; }
+        private string _saldo;
 
-
+        public string Saldo
+        {
+            get { return _saldo; }
+            set { SetProperty(ref _saldo, value); }
+        }
 
         public async void cargo()
         {
+           
             if (string.IsNullOrEmpty(CardName) || string.IsNullOrEmpty(CardNumber) || string.IsNullOrEmpty(CardExpirationDate) || string.IsNullOrEmpty(CardCvv))
             {
                 await DisplayAlert("Campos Vacios", "Complete todo los campos ","OK");
@@ -96,6 +103,7 @@ namespace AppEdificiosP.ViewModels
 
         }
 
+        // Método para obtener el valor del parámetro de la URL
 
         public async Task<string> SendJsonRequest(string url, HttpMethod method, string jsonContent)
         {
@@ -131,4 +139,6 @@ namespace AppEdificiosP.ViewModels
 
         public ICommand Pagarcommand => new Command( () => cargo());
     }
+
+
 }
