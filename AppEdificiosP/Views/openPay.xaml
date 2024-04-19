@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppEdificiosP.Views"
               xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"
+             Title="{Binding Title}"
              x:Class="AppEdificiosP.Views.openPay">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atrás" Command="{Binding BackCommand}" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <ScrollView>
             <Grid VerticalOptions="FillAndExpand" ColumnSpacing="20" HorizontalOptions="FillAndExpand">

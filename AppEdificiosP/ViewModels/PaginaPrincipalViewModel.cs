@@ -162,10 +162,10 @@ namespace AppEdificiosP.ViewModels
 
         public async void PaginaPagar(double Saldo)
         {
-           // await Shell.Current.GoToAsync("//MetodoPago");
+            await Shell.Current.GoToAsync("//MetodoPago");
 
-            string ruta = $"//openPay?parametro={Saldo}";            
-            await Shell.Current.GoToAsync(ruta);
+            //string ruta = $"//openPay?parametro={Saldo}";            
+            //await Shell.Current.GoToAsync(ruta);
 
 
             //string ruta = $"//openPay?parametro={saldo}";

@@ -1,4 +1,5 @@
 ﻿using AppEdificiosP.Models;
+using AppEdificiosP.Views;
 using Newtonsoft.Json;
 using Openpay;
 using Openpay.Entities;
@@ -20,6 +21,12 @@ namespace AppEdificiosP.ViewModels
 {
     public class openPayViewModel : BaseViewModel
     {
+        public openPayViewModel()
+        {
+            Title = "Tarjeta Crédito/ Débito";
+            
+        }
+
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CardExpirationDate { get; set; }
@@ -135,9 +142,15 @@ namespace AppEdificiosP.ViewModels
             }
         }
 
+        public async Task atras()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(MetodoPago)}");
+        }
 
 
         public ICommand Pagarcommand => new Command( () => cargo());
+
+        public ICommand BackCommand => new Command(async () => await atras());
     }
 
 

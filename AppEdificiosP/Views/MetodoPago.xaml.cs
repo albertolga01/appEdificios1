@@ -13,11 +13,14 @@ namespace AppEdificiosP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MetodoPago : ContentPage
     {
-        PaginaPrincipalViewModel _viewModel;
+        MetodoPagosViewModel _viewModel;
         public MetodoPago()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new PaginaPrincipalViewModel();
+            BindingContext = _viewModel = new MetodoPagosViewModel();
+            
         }
+
+  
     }
 }

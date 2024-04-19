@@ -19,5 +19,7 @@ namespace AppEdificiosP.Views
             _ = ((PaginaPrincipalViewModel)BindingContext).datosSesion();
             _ = ((PaginaPrincipalViewModel)BindingContext).lecturas(RecibosList);
         }
+
+    
     }
 }

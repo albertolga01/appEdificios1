@@ -5,23 +5,87 @@
              xmlns:template="clr-namespace:AppEdificiosP.Views"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:AppEdificiosP.ViewModels"  
-             xmlns:model="clr-namespace:AppEdificiosP.Models"  
-             x:Name="BrowseItemsPage"           
-             BackgroundColor="#F0F3FB">
-    
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" >
+             xmlns:model="clr-namespace:AppEdificiosP.Models" 
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="white">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atrás" Command="{Binding BackCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" >
+        
         <Frame CornerRadius="10" Grid.Row="1" BackgroundColor="White" Margin="10,10,10,0">
             <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
-   
+                <extensions:Expander>
+                    <extensions:Expander.Header>
+                        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                            <Image  Grid.Row="0" Grid.Column="0" Source="nocards" HeightRequest="30"/>
+                            <Label Grid.Row="0" Grid.Column="1" TextColor="#08457E" Text="Tarjeta Crédito o Débito"  FontSize="20"  ></Label>
+                        </Grid>
+
+                    </extensions:Expander.Header>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Text="CLICK PARA IR A PAGAR"
+                          VerticalOptions="CenterAndExpand" 
+                                Command="{Binding vistaOpenpaycommand}"
+                            />    
+                    </Grid>
+                </extensions:Expander>
+
             </Grid>
         </Frame>
 
+        <Frame CornerRadius="10" Grid.Row="2" BackgroundColor="White" Margin="10,10,10,0">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                <extensions:Expander>
+                    <extensions:Expander.Header>
+                        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                            <Image  Grid.Row="0" Grid.Column="0" Source="banco" HeightRequest="30"/>
+                            <Label Grid.Row="0" Grid.Column="1" TextColor="#08457E" Text="Transferencia SPEI"  FontSize="20"  ></Label>
+                        </Grid>
 
+                    </extensions:Expander.Header>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" TextColor="#878787"
+               Text="Aprobación instantánea desde cualquier banca en linea"
+               FontAttributes="Italic" />
+                    </Grid>
+                </extensions:Expander>
 
+            </Grid>
+        </Frame>
+        
+        <Frame CornerRadius="10" Grid.Row="3" BackgroundColor="White" Margin="10,10,10,0">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                <extensions:Expander>
+                    <extensions:Expander.Header>
+                        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                            <Image  Grid.Row="0" Grid.Column="0" Source="money" HeightRequest="30"/>
+                            <Label Grid.Row="0" Grid.Column="1" TextColor="#08457E" Text="Efectivo en puntos de pago"  FontSize="20"  ></Label>
+                        </Grid>
+
+                    </extensions:Expander.Header>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" TextColor="#878787"
+        Text="Aprobación instantánea desde cualquier banca en linea"
+        FontAttributes="Italic" />
+                    </Grid>
+                </extensions:Expander>
+
+            </Grid>
+        </Frame>
 
     </Grid>
-
 
 
 </ContentPage>
