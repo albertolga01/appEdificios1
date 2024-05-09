@@ -127,6 +127,47 @@ namespace AppEdificiosP.ViewModels
 
         }
 
+        public async Task EliminarCuenta()
+        {
+
+            bool resultado = await DisplayAlert("Eliminar Cuenta", "¿Estás seguro de Eliminar la cuenta?", "Sí", "No");
+
+            if (resultado == true)
+            {
+                var values = new Dictionary<string, string>
+                {
+                    { "identificador", Identificador},
+                    { "id","eliminarCuenta" }
+                };
+
+                var content = new FormUrlEncodedContent(values);
+                var response = await client.PostAsync("https://app.petromargas.com/api/indexapp.php", content);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Console.Write(responseString);
+
+                await DisplayAlert("Cuenta", responseString, "OK");
+                if (responseString == "Error.") { }
+                else
+                {
+                    Preferences.Clear();
+
+                    await Shell.Current.GoToAsync("//LoginPage");
+
+                }
+
+            }
+
+
+
+
+        }
+
         public ICommand CambioContracommand => new Command(async () => await CambioContra());
+
+        public ICommand EliminarCuentacommand => new Command(async () => await EliminarCuenta());
+
+     
     }
+
+
 }

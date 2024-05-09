@@ -191,4 +191,32 @@
     <BundleResource Include="Resources\banco.png" />
     <BundleResource Include="Resources\money.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Eleven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\K.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FarmaciaAhorro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FarmaciaBenavides.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Walmart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sams.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bodega.png" />
+    <BundleResource Include="Resources\Superama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\avisoPrivacidad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logotipo.png" />
+  </ItemGroup>
 </Project>

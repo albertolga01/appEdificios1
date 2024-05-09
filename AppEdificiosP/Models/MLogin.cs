@@ -9,6 +9,7 @@ namespace AppEdificiosP.Models
         public string correo { get; set; }
         public string contrasena { get; set; }
         public string id { get; set; }
+        public int activo { get; set; }
 
     }
 }

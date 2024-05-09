@@ -20,6 +20,9 @@ namespace AppEdificiosP.Views
             _ = ((PaginaPrincipalViewModel)BindingContext).lecturas(RecibosList);
         }
 
-    
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }

@@ -17,10 +17,18 @@ namespace AppEdificiosP.Views
         public MetodoPago()
         {
             InitializeComponent();
+           
             BindingContext = _viewModel = new MetodoPagosViewModel();
-            
+            _ = ((MetodoPagosViewModel)BindingContext).SaldoCliente();
+
         }
 
-  
+        protected override bool OnBackButtonPressed()
+        {
+
+            return true;
+          
+        }
+
     }
 }

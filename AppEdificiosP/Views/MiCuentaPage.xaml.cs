@@ -39,7 +39,10 @@ namespace AppEdificiosP.Views
 
         }
 
-
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
 
 
 

@@ -11,90 +11,123 @@
              x:Name="BrowseItemsPage"
            
              BackgroundColor="#F0F3FB">
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" >
 
-        <Frame CornerRadius="10" Grid.Row="1" BackgroundColor="White" Margin="10,10,10,0">
-            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
-                <Label Grid.Row="0" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.User}" FontSize="20"  ></Label>
-                <Label Grid.Row="0" Grid.Column="1"  Text="{Binding Nombre}" TextColor="#202020"></Label>
-                <Label Grid.Row="1" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Home}" FontSize="20"  ></Label>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CalleNumero}" TextColor="#202020"></Label>
-                <Label Grid.Row="2" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Phone}" FontSize="20"  ></Label>
-                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Telefono}" TextColor="#202020"></Label>
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" >
 
-                <Label Grid.Row="3" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
-                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Rfc}" TextColor="#202020"></Label>
+            <Frame CornerRadius="10" Grid.Row="1" BackgroundColor="White" Margin="10,10,10,0">
+                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                    <Label Grid.Row="0" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.User}" FontSize="20"  ></Label>
+                    <Label Grid.Row="0" Grid.Column="1"  Text="{Binding Nombre}" TextColor="#202020"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Home}" FontSize="20"  ></Label>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding CalleNumero}" TextColor="#202020"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Phone}" FontSize="20"  ></Label>
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding Telefono}" TextColor="#202020"></Label>
 
-                <Label Grid.Row="4" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
-                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Cfdi}" TextColor="#202020"></Label>
+                    <Label Grid.Row="3" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding Rfc}" TextColor="#202020"></Label>
 
-                <Label Grid.Row="5" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
-                <Label Grid.Row="5" Grid.Column="1" Text="{Binding RegimenFiscal}" TextColor="#202020"></Label>
+                    <Label Grid.Row="4" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding Cfdi}" TextColor="#202020"></Label>
 
-            </Grid>
-        </Frame>
+                    <Label Grid.Row="5" Grid.Column="0" TextColor="#08457E"  FontFamily="{StaticResource FontAwesomeSolid}" Text="{x:Static fontawesome:Solid.Address_Card}" FontSize="20"  ></Label>
+                    <Label Grid.Row="5" Grid.Column="1" Text="{Binding RegimenFiscal}" TextColor="#202020"></Label>
+             
 
-        <Frame CornerRadius="10" Grid.Row="2" BackgroundColor="#08457E" Margin="10,10,10,0">
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10" Padding="10,10,10,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid>
+            </Frame>
 
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0"  Text="Cambio de Contraseña" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Grid.Row="1"  Text="Nueva Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
-                <Entry Grid.Row="2" 
-                       IsPassword="True"
-                       HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"
-                       Text="{Binding NuevaContraseña}">
+            <Frame CornerRadius="10" Grid.Row="2" BackgroundColor="#08457E" Margin="10,10,10,0">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10" Padding="10,10,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Cambio de Contraseña" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1"  Text="Nueva Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
+                    <Entry Grid.Row="2" 
+                           IsPassword="True"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Text="{Binding NuevaContraseña}">
                     
-                </Entry>
+                    </Entry>
 
-                <Label Grid.Row="3"  Text="Repetir Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
-                <Entry Grid.Row="4"  
-                       IsPassword="True" 
-                       HorizontalOptions="FillAndExpand" 
-                       VerticalOptions="FillAndExpand"
-                       Text="{Binding RNuevaContraseña}">
+                    <Label Grid.Row="3"  Text="Repetir Contraseña" TextColor="White"  HorizontalOptions="StartAndExpand"></Label>
+                    <Entry Grid.Row="4"  
+                           IsPassword="True" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="FillAndExpand"
+                           Text="{Binding RNuevaContraseña}">
                     
-                </Entry>
+                    </Entry>
 
-                <Button Text="Cambiar Contraseña"
-                  VerticalOptions="CenterAndExpand"
-                  HorizontalOptions="Center"
-                  BackgroundColor="White"
-                  TextColor="#08457E"
-                  Grid.Row="5" 
-                  Command="{Binding CambioContracommand}"
-               />
-            </Grid>
-        </Frame>
+                    <Button Text="Cambiar Contraseña"
+                      VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="Center"
+                      BackgroundColor="White"
+                      TextColor="#08457E"
+                      Grid.Row="5" 
+                      Command="{Binding CambioContracommand}"
+                   />
+                </Grid>
+            </Frame>
+  
+
+            <Frame Grid.Row="3" Margin="10" CornerRadius="20" >
+                <CarouselView x:Name="cvBanner" Margin="-20" HeightRequest="120" Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout  Orientation="Horizontal"></LinearItemsLayout>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout  HorizontalOptions="FillAndExpand">
+                                <Image Source="{Binding URL}" VerticalOptions="FillAndExpand" HeightRequest="110" HorizontalOptions="FillAndExpand" Aspect="Fill"></Image>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Frame>
+
+            <Frame CornerRadius="10" Grid.Row="4" BackgroundColor="White" Margin="10,10,10,0">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10" Padding="10,10,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Eliminar Cuenta" FontSize="19" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+
+                    <Label Grid.Row="3"  Text="Desea Eliminar Cuenta" TextColor="Black"  HorizontalOptions="StartAndExpand"></Label>
 
 
+                    <Button Text="Eliminar Cuenta"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"
+                       BackgroundColor="Red"
+                       TextColor="Black"
+                       Grid.Row="5" 
+                       Command="{Binding EliminarCuentacommand}"
+                   />
+                </Grid>
+            </Frame>
 
-        <Frame Grid.Row="3" Margin="10" CornerRadius="20" >
-            <CarouselView x:Name="cvBanner" Margin="-20" HeightRequest="120" Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                <CarouselView.ItemsLayout>
-                    <LinearItemsLayout  Orientation="Horizontal"></LinearItemsLayout>
-                </CarouselView.ItemsLayout>
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout  HorizontalOptions="FillAndExpand">
-                            <Image Source="{Binding URL}" VerticalOptions="FillAndExpand" HeightRequest="110" HorizontalOptions="FillAndExpand" Aspect="Fill"></Image>
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-        </Frame>
 
-    </Grid>
+        </Grid>
 
+
+    </ScrollView>
 
 
 </ContentPage>

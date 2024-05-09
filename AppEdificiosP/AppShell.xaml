@@ -87,6 +87,9 @@
     <FlyoutItem Title="Mi Cuenta" Icon="icon_feed.png">
         <ShellContent Route="MiCuentaPage" ContentTemplate="{DataTemplate local:MiCuentaPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Aviso de Privacidad" Icon="avisoPrivacidad.png">
+        <ShellContent Route="AvisoPrivacidadPage" ContentTemplate="{DataTemplate local:AvisoPrivacidadPage}" />
+    </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Cerrar Sesion" IconImageSource="logout.png" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

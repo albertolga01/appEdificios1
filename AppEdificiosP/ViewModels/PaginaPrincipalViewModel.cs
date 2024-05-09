@@ -109,6 +109,7 @@ namespace AppEdificiosP.ViewModels
                 }
             }
             Saldo = saldo;
+            
 
             FechaCorte = lecturas[0].Date.ToString();
             IDlectura = lecturas[0].idLectura.ToString();            
@@ -160,16 +161,10 @@ namespace AppEdificiosP.ViewModels
                 listView.SelectedItem = null;
         }
 
-        public async void PaginaPagar(double Saldo)
+        public async void PaginaPagar()
         {
-            await Shell.Current.GoToAsync("//MetodoPago");
-
-            //string ruta = $"//openPay?parametro={Saldo}";            
-            //await Shell.Current.GoToAsync(ruta);
-
-
-            //string ruta = $"//openPay?parametro={saldo}";
-            //await Shell.Current.GoToAsync(ruta);
+            //await Shell.Current.GoToAsync($"MetodoPago");
+             await Shell.Current.GoToAsync("//MetodoPago");
 
 
 
@@ -210,7 +205,7 @@ namespace AppEdificiosP.ViewModels
 
 
         public ICommand DatosSesioncommand => new Command(async () => await datosSesion());
-        public ICommand PaginaPagarcommand => new Command(async () => PaginaPagar(Saldo));
+        public ICommand PaginaPagarcommand => new Command(async () => PaginaPagar());
         //public ICommand PaginaPagarcommand => new Command<double>(async (Saldo) => await PaginaPagar(Saldo));
 
         public ICommand PDFRecibocommand => new Command(async () => await PDFRecibo());

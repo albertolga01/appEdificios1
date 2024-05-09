@@ -21,24 +21,57 @@ namespace AppEdificiosP.ViewModels
 {
     public class openPayViewModel : BaseViewModel
     {
-        public openPayViewModel()
-        {
-            Title = "Tarjeta Crédito/ Débito";
-            
-        }
-
+        double _Saldo;
+        string _IdRecibo;
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CardExpirationDate { get; set; }
         public string CardCvv { get; set; }
-        private string _saldo;
-
-        public string Saldo
+        public double Saldo
         {
-            get { return _saldo; }
-            set { SetProperty(ref _saldo, value); }
+            get { return _Saldo; }
+            set { SetValue(ref _Saldo, value); }
+        }
+        public string IdRecibo
+        {
+            get { return _IdRecibo; }
+            set { SetValue(ref _IdRecibo, value); }
         }
 
+        private static readonly HttpClient client = new HttpClient();
+
+        public openPayViewModel()
+        {           
+            Title = "Tarjeta Crédito/ Débito";            
+        }
+
+        public async Task SaldoCliente()
+        {
+            string id = Preferences.Get("id", "");
+            var values = new Dictionary<string, string>
+            {
+                { "identificador", id},
+                { "id","obtenerSaldoPendiente" }
+            };
+            var content = new FormUrlEncodedContent(values);
+            var response = await client.PostAsync("https://app.petromargas.com/api/indexapp.php", content);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            var lecturas = JsonConvert.DeserializeObject<List<Recibo>>(responseString);
+
+            double saldo = 0;
+            foreach (var property in lecturas)
+            {
+                if (property.pagado == 0)
+                {
+                    saldo += property.total;
+                }
+            }
+            Saldo = saldo;
+            IdRecibo = lecturas[0].id.ToString();
+        }
+
+   
         public async void cargo()
         {
            
@@ -88,9 +121,9 @@ namespace AppEdificiosP.ViewModels
                     customer.Name = jsonObjectToken.card.holder_name;
                     customer.Email = email; //correo del cliente
                     requestC.Method = "card";
-                    requestC.Amount = new Decimal(10.00); //Cantidad
-                    requestC.Description = "Cargo inicial a mi merchant"; // cambiar descripcion
-                    requestC.OrderId = "oid-00057"; //unico  
+                    requestC.Amount = new Decimal(Saldo); //Cantidad
+                    requestC.Description = "Cargo Pago servicio gas lp grupopetromar"; 
+                    requestC.OrderId = IdRecibo; //unico  
                     requestC.SendEmail = false;
                     requestC.RedirectUrl = "http://www.openpay.mx/index.html";
                     requestC.Customer = customer;
@@ -98,11 +131,11 @@ namespace AppEdificiosP.ViewModels
                     requestC.SourceId = jsonObjectToken.id;
 
                     Charge charge = api.ChargeService.Create(requestC);
-                    await DisplayAlert("Error al iniciar sesion", "Id: " + charge.Id + " cantidad: " + charge.Amount, "OK");
+                    await DisplayAlert("¡Transacción exitosa!", "Se ha realizado el cargo a tu tarjeta,por la  cantidad: " + charge.Amount + " con el ID: " + charge.Id + ". ¡Gracias por confiar en nosotros!", "OK");
                 }
                 catch (Exception e)
                 {
-                    await DisplayAlert("Error al iniciar sesion", e.ToString(), "OK");
+                    await DisplayAlert("Error al proceder el cargo", e.ToString(), "OK");
                 }
 
             }
@@ -145,12 +178,25 @@ namespace AppEdificiosP.ViewModels
         public async Task atras()
         {
             await Shell.Current.GoToAsync($"//{nameof(MetodoPago)}");
+            //await Shell.Current.GoToAsync($"MetodoPago");
         }
 
 
         public ICommand Pagarcommand => new Command( () => cargo());
 
         public ICommand BackCommand => new Command(async () => await atras());
+
+
+        public class Recibo
+        {
+            public string id { get; set; }
+            public string idLectura { get; set; }
+            public double litros { get; set; }
+            public string precioUnitario { get; set; }
+            public double total { get; set; }
+            public double timbrado { get; set; }
+            public double pagado { get; set; }
+        }
     }
 
 

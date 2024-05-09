@@ -21,5 +21,10 @@ namespace AppEdificiosP.Views
             BindingContext = _viewModel = new openPayViewModel();
           
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
     }
 }

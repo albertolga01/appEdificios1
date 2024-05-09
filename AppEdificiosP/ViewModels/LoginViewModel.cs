@@ -53,11 +53,19 @@ namespace AppEdificiosP.ViewModels
                 string email = res.correo;
                 string pass = res.contrasena;
                 string identificador = res.id;
+                int activo = res.activo;
 
                 Preferences.Set("isLoggedIn", true);
                 Preferences.Set("correo", email);
                 Preferences.Set("pass", pass);
                 Preferences.Set("id", identificador);
+             
+
+                if (activo == 0)
+                {
+                    await DisplayAlert("Error al iniciar sesion", "Cuenta Dada de Baja", "OK");
+                    return;
+                }
 
                 if (Correo == email && Contraseña == pass)
                 {
