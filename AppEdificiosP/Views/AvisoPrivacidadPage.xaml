@@ -5,116 +5,70 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20">
-                <!-- Aquí colocarías el texto de tu aviso de privacidad -->
-                <Label Text="AVISO DE PRIVACIDAD" 
-                       TextColor="Black"
-                       FontAttributes="Bold"/>
-
-                <Label 
-                     Text="La identidad y domicilio del responsable " 
-                     TextColor="Black"
-                    Margin="0,30,0,0"
-                />
                 
-                <Label 
-Text="GAS UNION DE AMÉRICA, S.A. DE C.V. MICONSUMO PETROMAR, con domicilio en Plaza Santa Fe, Avenida Camarón Sábalo Número 102, local 7, Colonia Lomas de Mazatlán, código postal 82110, en Mazatlán, Sinaloa, es el responsable del
-tratamiento de los datos personales que nos proporcione, los cuales serán
-protegidos conforme a lo dispuesto por la Ley General de Protección de Datos
-Personales en Posesión de los Particulares y demás normatividad que resulte aplicable." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                    FontSize="13"
-                />
-                
-                <Label 
-                    Text="Las finalidades del tratamiento de datos " 
-                    TextColor="Black"                                     
-                    Margin="0,20,0,0"
-                />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="AVISO DE PRIVACIDAD" TextColor="Black" FontSize="15" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="MI COSUMO PETROMAR" TextColor="Black" FontSize="15" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
 
-                <Label 
-                    Text="Los datos personales que recabemos serán utilizados con la finalidad de prestarle el servicio de suministro gas licuado de petróleo, así como servicios
-                        relacionados." 
-                    TextColor="Black"                                     
-                    Margin="0,20,0,0"
-                     FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="La identidad y domicilio del responsable" TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
 
-                <Label 
-                    Text="Para las finalidades antes señaladas se podrán solicitar de manera enunciativa
-los siguientes datos personales: nombre completo, domicilio, RFC, usuario,
-                        contraseña, correo electrónico, información societaria, datos de los
-representantes o apoderados legales, datos bancarios e información comercial
-y financiera diversa indispensable para otorgar el servicio que se solicite.
-Todos los Datos Personales proporcionados a MICONSUMO PETROMAR, serán
-considerados como información confidencial, obligación que subsistirá a pesar
-de que el titular de dicha información haya finalizado su relación con la
-sociedad. Asimismo, dichos Datos Personales no serán divulgados a terceras
-personas sin la autorización de su titular." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                     FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="GAS UNIÓN DE AMÉRICA, S.A. DE C.V. “GAS PETRO”, con domicilio en Plaza Santa Fe, Avenida Camarón Sábalo Número 102, local 7, Colonia Lomas de Mazatlán, código postal 82110, en Mazatlán, Sinaloa, es el responsable del tratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto por la Ley General de Protección de Datos Personales en Posesión de los Particulares y demás normatividad que resulte aplicable."  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
 
-                <Label 
-                    Text="Se informa que no se recabarán datos personales sensibles.
-                        Las opciones para limitar el uso o divulgación de los datos
-De igual forma, y sólo en caso de que el usuario lo autorice, los datos de
-contacto proporcionados se utilizarán para enviar por correo electrónico,
-teléfono celular, entre otros." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                    FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="Las finalidades del tratamiento de datos" TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
 
-                <Label 
-                    Text="Los medios para ejercer los derechos ARCO.
-                        El titular por sí o mediante representante legal debidamente acreditado, podrá
-ejercer sus derechos ARCO (acceso, rectificación, cancelación y oposición)
-sobre sus datos personales, así como de oponerse al tratamiento de los
-mismos o revocar el consentimiento que para tal fin nos haya otorgado,
-presentando su solicitud a través de escrito dirigido a GAS UNIÓN DE
-AMÉRICA, S.A. DE C.V., a la siguiente dirección de correo electrónico:
-                        franciscopina@grupopetromar.com." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                    FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Para las finalidades antes señaladas se podrán solicitar de manera enunciativa los siguientes datos personales: nombre completo, domicilio, RFC, usuario, contraseña, correo electrónico, información societaria, datos de los representantes o apoderados legales, datos bancarios e información comercial y financiera diversa indispensable para otorgar el servicio que se solicite.
+                                Todos los Datos Personales proporcionados a GAS PETRO, serán considerados como información confidencial, obligación que subsistirá a pesar de que el titular de dicha información haya finalizado su relación con la sociedad. Asimismo, dichos Datos Personales no serán divulgados a terceras personas sin la autorización de su titular.
+                                Se informa que no se recabarán datos personales sensibles."  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
 
-                <Label 
-                    Text="Transferencia de datos personales.            
-                            Se informa que no se realizarán transferencias de datos personales, salvo aquéllas que están establecidas en ley o sean necesarias para atender requerimientos de información de una autoridad competente." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                    FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="Las opciones para limitar el uso o divulgación de los datos" TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
 
-                <Label 
-                    Text="Cambios al aviso de privacidad.
-                             MICONSUMO PETROMAR se reserva el derecho de enmendar o modificar el presente
-Aviso de Privacidad como estime conveniente, por ejemplo, para cumplir con
-cambios a la legislación sobre protección de datos o para efecto de cumplir
-con las disposiciones internas, en dado caso, se le informará y pondrá a su
-disposición el Aviso de Privacidad actualizado cuando se le hagan cambios
-significativos al mismo, así como cuando se requiera recabar su
-consentimiento." 
-                    TextColor="Black"
-                    HorizontalOptions="CenterAndExpand"                    
-                    Margin="0,20,0,0"
-                    FontSize="13"
-                />
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="De igual forma, y sólo en caso de que el usuario lo autorice, los datos de contacto proporcionados se utilizarán para enviar por correo electrónico, teléfono celular, entre otros."  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
 
-                <Label 
-                     Text="Fecha última actualización 22 de marzo de 2023" 
-                     TextColor="Black"
-                     HorizontalOptions="CenterAndExpand"                    
-                     Margin="0,20,0,0"
-                 />
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="Los medios para ejercer los derechos ARCO." TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="El titular por sí o mediante representante legal debidamente acreditado, podrá ejercer sus derechos ARCO (acceso, rectificación, cancelación y oposición) sobre sus datos personales, así como de oponerse al tratamiento de los mismos o revocar el consentimiento que para tal fin nos haya otorgado, presentando su solicitud a través de escrito dirigido a GAS UNIÓN DE AMÉRICA, S.A. DE C.V., a la siguiente dirección de correo electrónico: franciscopina@grupopetromar.com. "  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="Transferencia de datos personales" TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Se informa que no se realizarán transferencias de datos personales, salvo aquéllas que sean estrictamente necesarias para el otorgamiento de los servicios solicitados, las que estén establecidas en ley o sean necesarias para atender requerimientos de información de una autoridad competente. "  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="Cambios al aviso de privacidad" TextColor="Black" FontSize="13" VerticalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="GAS PETRO se reserva el derecho de enmendar o modificar el presente Aviso de Privacidad como estime conveniente, por ejemplo, para cumplir con cambios a la legislación sobre protección de datos o para efecto de cumplir con las disposiciones internas, en dado caso, se le informará y pondrá a su disposición el Aviso de Privacidad actualizado cuando se le hagan cambios significativos al mismo, así como cuando se requiera recabar su consentimiento. "  TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Label Text="Fecha última actualización 09 de mayo de 2024." TextColor="Black" FontSize="15" VerticalOptions="Center" />
+                </StackLayout>
 
             </StackLayout>
         </ScrollView>
