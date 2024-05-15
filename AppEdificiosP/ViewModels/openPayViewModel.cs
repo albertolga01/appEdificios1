@@ -23,6 +23,12 @@ namespace AppEdificiosP.ViewModels
     {
         double _Saldo;
         string _IdRecibo;
+        string _Saldoo;
+        public string Saldoo
+        {
+            get { return _Saldoo; }
+            set { SetValue(ref _Saldoo, value); }
+        }
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string CardExpirationDate { get; set; }
@@ -69,6 +75,8 @@ namespace AppEdificiosP.ViewModels
             }
             Saldo = saldo;
             IdRecibo = lecturas[0].id.ToString();
+            await DisplayAlert("Campos Vacios", Saldo.ToString(), "OK");
+            Saldoo = "Pagar: " + "$"+Saldo.ToString();
         }
 
    
@@ -77,7 +85,8 @@ namespace AppEdificiosP.ViewModels
            
             if (string.IsNullOrEmpty(CardName) || string.IsNullOrEmpty(CardNumber) || string.IsNullOrEmpty(CardExpirationDate) || string.IsNullOrEmpty(CardCvv))
             {
-                await DisplayAlert("Campos Vacios", "Complete todo los campos ","OK");
+               /* await DisplayAlert("Campos Vacios", "Complete todo los campos ","OK");*/
+                await DisplayAlert("Campos Vacios",Saldo.ToString() , "OK");
             }
             else
             {

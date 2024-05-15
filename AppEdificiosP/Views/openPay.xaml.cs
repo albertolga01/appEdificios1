@@ -19,7 +19,8 @@ namespace AppEdificiosP.Views
         {
             InitializeComponent();
             BindingContext = _viewModel = new openPayViewModel();
-          
+            _ = ((openPayViewModel)BindingContext).SaldoCliente();
+
         }
 
         protected override bool OnBackButtonPressed()

@@ -214,11 +214,14 @@
                          Visual="Custom">
                             <Entry.Behaviors>
                                 <fastEntry:XamarinFastEntryBehaviour Mask="###" 
-                                                              MaxLength="3"/>
+                                                              MaxLength="4"/>
                             </Entry.Behaviors>
                         </Entry>
                     </StackLayout>
                 </Frame>
+
+
+
 
 
                 <BoxView HorizontalOptions="FillAndExpand"
@@ -231,7 +234,7 @@
                    Grid.ColumnSpan="3"/>
 
 
-                <Button Text="Pagar"
+                <Button Text="{Binding Saldoo}"
                          BackgroundColor="#1C375C"
                          CornerRadius="26"
                          FontSize="18"

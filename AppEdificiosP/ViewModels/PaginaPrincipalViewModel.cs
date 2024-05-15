@@ -164,7 +164,8 @@ namespace AppEdificiosP.ViewModels
         public async void PaginaPagar()
         {
             //await Shell.Current.GoToAsync($"MetodoPago");
-             await Shell.Current.GoToAsync("//MetodoPago");
+            await Shell.Current.GoToAsync("//MetodoPago");
+           
 
 
 

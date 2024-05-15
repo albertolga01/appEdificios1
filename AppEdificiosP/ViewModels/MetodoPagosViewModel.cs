@@ -80,6 +80,7 @@ namespace AppEdificiosP.ViewModels
             }
             else
             {
+               
                 await Shell.Current.GoToAsync($"//{nameof(openPay)}");
             }
            

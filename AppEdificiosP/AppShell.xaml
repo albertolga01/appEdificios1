@@ -26,7 +26,8 @@
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
-
+            
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid" Android="FontAwesome5FreeSolid900.otf#Regular" iOS="FontAwesome5Free-Solid" />
             <!--
             Default Styles for all Flyout Items
             https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEdificiosP.Android", "Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEdificiosP.iOS", "AppEdificiosP.iOS\AppEdificiosP.iOS.csproj", "{337C6B72-9AE8-47C9-BAF0-0883F69781AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEdificiosP", "AppEdificiosP\AppEdificiosP.csproj", "{BE4EFB27-8EB9-441A-92CA-F21EDB156A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppEdificiosP", "AppEdificiosP\AppEdificiosP.csproj", "{BE4EFB27-8EB9-441A-92CA-F21EDB156A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
